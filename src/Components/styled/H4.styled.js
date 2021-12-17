@@ -11,12 +11,24 @@ margin-right: 5rem;
 white-space: nowrap;
 overflow: hidden;
 
-@media (max-width: 360px) {
+@media (max-width: 720px) {
     display: none;
   }
 
 
+`;
+
+const FootH4 = styled(H4)`
+color: #271033;
+height: min-content;
+align-self: center;
+display: inline;
+margin-left: auto;
+margin-right: 5rem;
+white-space: nowrap;
+overflow: hidden;
 `
+ 
 
 
 export default H4;
