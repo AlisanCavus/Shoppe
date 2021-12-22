@@ -46,8 +46,9 @@ code {
 @media (max-width: 500px) {
   .headlogo {
     font-size: 30px;
-    margin-left: 25%;
+    margin: auto;
     width: 50%;
+    text-align:center;
   }
   .txt {
     display:none;
