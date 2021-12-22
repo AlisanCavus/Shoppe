@@ -53,6 +53,12 @@ code {
   .txt {
     display:none;
   }
+  .form {
+    width: 250px;
+  }
+  .input {
+    width: 250px;
+  }
 }
 
 .txt {
@@ -72,12 +78,35 @@ code {
 
 .bigcontainer {
  min-height: 100%;
- margin-bottom: -50px;
  position:relative;
+ display: flex;
+ justify-content:center;
 
 
 }
 
+.form-placeholder{
+  text-align: center;
+}
+
+.btn-container {
+  flex: 1;
+}
+
+.input {
+  border-radius: 15px;
+  width: 350px;
+  height: 40px;
+  backgroun-color: #79aee0;
+  text-align: center;
+  border: none;
+  
+}
+
+.form{
+  display: flex;
+  justify-content: center;
+}
 
 .btn {
   background-color: #82846d;

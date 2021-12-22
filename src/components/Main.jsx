@@ -1,9 +1,15 @@
+import AddItem from './AddItem';
+
+
 function Main() {
-    return (
-        <div className="bigcontainer">
-            
-        </div>
-    )
+  
+  return (
+    <div >
+      <div className="bigcontainer">
+        <AddItem />
+      </div>
+    </div>
+  );
 }
 
-export default Main
+export default Main;
