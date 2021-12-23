@@ -6,10 +6,6 @@ import ListItemsTemplate from '../../ListItemsTemplate';
 
 function Card() {
   const [shoplist, setShopList] = useState(ListItemsTemplate);
-  
-  useEffect(() => {
-    localStorage.setItem('shops', JSON.stringify(shoplist))
-  }, [shoplist])
 
   if (!ListItemsTemplate || ListItemsTemplate.length === 0) {
     return <p style={{textAlign: 'center'}}>You don't have any shopping list.</p>;
@@ -34,7 +30,6 @@ function Card() {
         newShopItems.splice(index, 1)
         setShopList(newShopItems)
     }
-
 
   return (
     <div>
