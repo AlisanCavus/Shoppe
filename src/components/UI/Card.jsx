@@ -1,7 +1,7 @@
 import { FiPlusSquare } from 'react-icons/fi';
 import { FiMinusSquare } from 'react-icons/fi';
 import { FiTrash2 } from 'react-icons/fi';
-import { useState, useEffect} from 'react';
+import { useState } from 'react';
 import ListItemsTemplate from '../../ListItemsTemplate';
 
 function Card() {
