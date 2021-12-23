@@ -6,7 +6,7 @@ function AddItem() {
     const sty = useSpring({
         from: { opacity: 0, },
         to: { opacity: 1, },
-        delay: 300,
+        delay: 100,
       })
     return (
         <animated.div style={ sty }>
