@@ -3,10 +3,12 @@ import { FiMinusSquare } from 'react-icons/fi';
 import { FiTrash2 } from 'react-icons/fi';
 import { useState, useEffect} from 'react';
 import AddItem from '../AddItem';
+import { useSpring, animated } from 'react-spring';
+import { motion } from 'framer-motion'
 
 
 function Card() {
-  const [shoplist, setShopList] = useState(null);
+  const [shoplist, setShopList] = useState([]);
   console.log(shoplist);
 
   useEffect(() => {
@@ -22,8 +24,9 @@ function Card() {
   })
 
   const addListItem = (newListItem) => {
-    if (newListItem) {
-      setShopList([newListItem, ...shoplist])}
+    if (newListItem.item.length !== 0) {
+      setShopList([newListItem, ...shoplist])
+    }
   }
 
   const handlePlus = (index) => {
@@ -34,9 +37,12 @@ function Card() {
 
   const handleMinus = (index) => {
     const newShopItems = [...shoplist]
+    if (newShopItems[index].amount === 1 ) {
+      handleDelete(index)
+    } else {
     newShopItems[index].amount--
     setShopList(newShopItems)
-    
+    }
   }
 
   const handleDelete = (index) => {
@@ -45,14 +51,20 @@ function Card() {
     setShopList(newShopItems)
   }
 
+  const sty = useSpring({
+    from: { opacity: 0 },
+    to: { opacity: 1 },
+    delay: 300,
+  });
+
   return (
     <div>
       <AddItem handleAdd={addListItem} />
       {!shoplist || shoplist.length === 0 ? (
-        <p style={{ textAlign: 'center' }}>You don't have any item in your list.</p>
+        <p style={{ textAlign: 'center' }}>You don't have anything to buy.</p>
       ) : (
         shoplist.map((id, index) => (
-          <div key={id.id}>
+          <animated.div style={sty} key={id.id}>
             <div className="card">
               <p>{id.item}</p>
               <div className="card2">
@@ -60,7 +72,7 @@ function Card() {
                   className="pad"
                   onClick={() => handlePlus(index)}
                 />
-                <div className="pad">{id.amount}</div>
+                <div className="pad1">{id.amount}</div>
                 <FiMinusSquare
                   className="pad"
                   onClick={() => handleMinus(index)}
@@ -71,7 +83,7 @@ function Card() {
                 />
               </div>
             </div>
-          </div>
+          </animated.div>
         ))
       )}
     </div>

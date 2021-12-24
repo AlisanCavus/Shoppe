@@ -1,6 +1,7 @@
 import Foot from "./components/Foot";
 import Head from "./components/Head";
 import Main from "./components/Main";
+import Screen from "./components/UI/Screen";
 
 
 function App() {
@@ -9,6 +10,7 @@ function App() {
       <Head />
         <Main>
         </Main>
+        <Screen />
       <Foot />
     </div>
   );

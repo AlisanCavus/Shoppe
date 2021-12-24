@@ -18,7 +18,8 @@ function AddItem({handleAdd}) {
 
     if (listText === '') {
       setMessage('We know you need something to buy.')
-    } else {
+      
+    } else  {
       const newListItem = {
         id: uuidv4(),
         item: listText,

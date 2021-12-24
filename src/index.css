@@ -58,7 +58,10 @@ code {
   }
   .input {
     width: 250px;
+    align-items: center;
+
   }
+  
 }
 
 .txt {
@@ -77,8 +80,10 @@ code {
 }
 
 .bigcontainer {
+
+  margin-top: 20px;
  max-height: min-content;
- min-height: 80vh;
+ min-height: 70vh;
  position:relative;
  display: grid;
  justify-content:center;
@@ -124,7 +129,7 @@ code {
 .foot{
   bottom: 0;
   left: 0;
-  height:10vh;
+  height:15vh;
   width:100%;
   background-color: transparent;
   display: flex;
@@ -162,13 +167,37 @@ a {
 }
 
 .pad {
-  margin: 0 2px;
+  margin: 0 5px;
+  cursor: pointer;
 }
 
+.pad1 {
+  margin: 0 5px 0 5px;
+  cursor: default;
+  
+}
 .pad2 {
   margin: 0 0 0 20px;
+  cursor: pointer;
 }
 
 p{
   margin: 5px;;
 }
+
+.camera {
+  width: 50px;
+  height: 50px;
+  float: right;
+  margin: 0 40px;
+  position: sticky;
+  bottom: 0;
+  right: 0;
+  border: 1px solid black;
+  border-radius: 40%;
+  cursor: pointer;
+  background-color: transparent;
+}
+
+
+
