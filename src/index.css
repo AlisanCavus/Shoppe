@@ -77,10 +77,13 @@ code {
 }
 
 .bigcontainer {
- min-height: 100%;
+ max-height: min-content;
+ min-height: 80vh;
  position:relative;
  display: grid;
  justify-content:center;
+ position:static;
+ overflow: none;
 
 
 }
@@ -126,7 +129,8 @@ code {
   background-color: transparent;
   display: flex;
   justify-content: center;
-  position:absolute;
+  position: relative;
+  margin-top: auto;
 }
 
 a {
@@ -159,6 +163,10 @@ a {
 
 .pad {
   margin: 0 2px;
+}
+
+.pad2 {
+  margin: 0 0 0 20px;
 }
 
 p{

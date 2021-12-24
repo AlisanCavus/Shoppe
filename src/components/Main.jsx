@@ -4,8 +4,8 @@ function Main() {
 
 
   return (
-    <div >
-      <div className="bigcontainer">
+    <div className="bigcontainer">
+      <div >
         <Card   />
       </div>
     </div>

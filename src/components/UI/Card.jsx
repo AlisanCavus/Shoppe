@@ -45,7 +45,7 @@ function Card() {
               <FiPlusSquare className="pad" onClick={() => handlePlus(index)} />
               <div className="pad">{id.amount}</div>
               <FiMinusSquare className="pad" onClick={() => handleMinus(index)} />
-              <FiTrash2 className="pad" onClick={() => handleDelete(index)} />
+              <FiTrash2 className="pad2" onClick={() => handleDelete(index)} />
             </div>
           </div>
         </div>
