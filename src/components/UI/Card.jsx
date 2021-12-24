@@ -3,6 +3,7 @@ import { FiMinusSquare } from 'react-icons/fi';
 import { FiTrash2 } from 'react-icons/fi';
 import { useState } from 'react';
 import ListItemsTemplate from '../../ListItemsTemplate';
+import AddItem from '../AddItem';
 
 function Card() {
   const [shoplist, setShopList] = useState(ListItemsTemplate);
@@ -11,7 +12,9 @@ function Card() {
     return <p style={{textAlign: 'center'}}>You don't have any shopping list.</p>;
   }
 
-  
+  const addListItem = (newListItem) => {
+    setShopList([newListItem, ...shoplist])
+  }
 
   const handlePlus = (index) => {
       const newShopItems = [...shoplist]
@@ -33,6 +36,7 @@ function Card() {
 
   return (
     <div>
+      <AddItem handleAdd={addListItem}/>
       {shoplist.map((id,index) => (
         <div key={id.id}>
           <div   className="card">
