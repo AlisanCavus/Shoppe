@@ -4,7 +4,7 @@ import { v4 as uuidv4 } from 'uuid';
 
 
 function AddItem({handleAdd}) {
-  const [listText, setListText] = useState('');
+  const [listText, setListText] = useState([]);
   const [message, setMessage ] = useState('Add an Item')
 
   
