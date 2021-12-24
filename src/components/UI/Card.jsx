@@ -1,55 +1,64 @@
 import { FiPlusSquare } from 'react-icons/fi';
 import { FiMinusSquare } from 'react-icons/fi';
 import { FiTrash2 } from 'react-icons/fi';
-import { useState } from 'react';
-import ListItemsTemplate from '../../ListItemsTemplate';
+import { useState} from 'react';
+import  ListItemsTemplate from '../../ListItemsTemplate'
 import AddItem from '../AddItem';
 
 function Card() {
   const [shoplist, setShopList] = useState(ListItemsTemplate);
 
-  if (!ListItemsTemplate || ListItemsTemplate.length === 0) {
-    return <p style={{textAlign: 'center'}}>You don't have any shopping list.</p>;
-  }
-
   const addListItem = (newListItem) => {
-    setShopList([newListItem, ...shoplist])
-  }
+    setShopList([newListItem, ...shoplist]);
+  };
 
   const handlePlus = (index) => {
-      const newShopItems = [...shoplist]
-      newShopItems[index].amount ++
-      setShopList(newShopItems)
-  }
+    const newShopItems = [...shoplist];
+    newShopItems[index].amount++;
+    setShopList(newShopItems);
+  };
 
   const handleMinus = (index) => {
-    const newShopItems = [...shoplist]
-    newShopItems[index].amount --
-    setShopList(newShopItems)
-    }
+    const newShopItems = [...shoplist];
+    newShopItems[index].amount--;
+    setShopList(newShopItems);
+  };
 
-    const handleDelete = (index) => {
-        const newShopItems = [...shoplist]
-        newShopItems.splice(index, 1)
-        setShopList(newShopItems)
-    }
+  const handleDelete = (index) => {
+    const newShopItems = [...shoplist];
+    newShopItems.splice(index, 1);
+    setShopList(newShopItems);
+  };
 
   return (
     <div>
-      <AddItem handleAdd={addListItem}/>
-      {shoplist.map((id,index) => (
-        <div key={id.id}>
-          <div   className="card">
-            <p>{id.item}</p>
-            <div className="card2">
-              <FiPlusSquare className="pad" onClick={() => handlePlus(index)} />
-              <div className="pad">{id.amount}</div>
-              <FiMinusSquare className="pad" onClick={() => handleMinus(index)} />
-              <FiTrash2 className="pad2" onClick={() => handleDelete(index)} />
+      <AddItem handleAdd={addListItem} />
+      {!ListItemsTemplate|| ListItemsTemplate.length === 0 ? (
+        <p style={{ textAlign: 'center' }}>You don't have any shopping list.</p>
+      ) : (
+        shoplist.map((id, index) => (
+          <div key={id.id}>
+            <div className="card">
+              <p>{id.item}</p>
+              <div className="card2">
+                <FiPlusSquare
+                  className="pad"
+                  onClick={() => handlePlus(index)}
+                />
+                <div className="pad">{id.amount}</div>
+                <FiMinusSquare
+                  className="pad"
+                  onClick={() => handleMinus(index)}
+                />
+                <FiTrash2
+                  className="pad2"
+                  onClick={() => handleDelete(index)}
+                />
+              </div>
             </div>
           </div>
-        </div>
-      ))}
+        ))
+      )}
     </div>
   );
 }

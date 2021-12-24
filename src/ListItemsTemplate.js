@@ -1,4 +1,4 @@
-const ListItemsTemplate = [
+ const ListItemsTemplate = [
     {
         id: 1,
         item: 'HandGrenade',
