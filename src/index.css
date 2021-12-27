@@ -200,4 +200,40 @@ p{
 }
 
 
+.modal {
+  display: none;
+  z-index: 100;
+  position: absolute;
+  padding-top: 1.5rem;
+  top: 0; 
+  left: 0 ;
+  width: 100%;
+  height: 100%;
+  background: -webkit-linear-gradient(-180deg, rgb(104, 172, 241 ), rgb(252, 191, 73));
+  background: linear-gradient(-180deg, rgb(104, 172, 241 ), rgb(252, 191, 73));
+  background-repeat: no-repeat;
+  background-attachment: fixed; 
+}
 
+.modal-content{
+  background-color: transparent;
+  margin: auto;
+  border-radius: 6px;
+  width: 50%;
+  height: 50%;
+  height: auto;
+  cursor:pointer;
+}
+
+.close{
+  cursor: pointer;
+  float: right;
+}
+
+.imageWrapper img {
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  border: 5px solid black;
+
+}

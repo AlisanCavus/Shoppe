@@ -5,12 +5,15 @@ import Screen from "./components/UI/Screen";
 
 
 function App() {
+
+  
   return (
-    <div>
+    <div> 
       <Head />
-        <Main>
-        </Main>
+        
+        <Main />
         <Screen />
+       
       <Foot />
     </div>
   );

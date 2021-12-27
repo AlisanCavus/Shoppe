@@ -63,31 +63,34 @@ function Card() {
   }
 
   return (
-    <div>
-      <AddItem handleAdd={addListItem} />
+    <div id="apx" >
+      <div data-html2canvas-ignore ><AddItem handleAdd={addListItem} /></div>
       {!shoplist || shoplist.length === 0 ? (
         <p style={{ textAlign: 'center' }}>You don't have anything to buy.</p>
       ) : (
         shoplist.map((id, index) => (
-          <animated.div style={sty} key={id.id}>
-            <div className="card">
+          <animated.div style={sty} key={id.id}  >
+            <div className="card" >
               <p>{id.item}</p>
-              <div className="card2">
+              <motion.div className="card2">
                 <FiPlusSquare
+                  data-html2canvas-ignore
                   className="pad"
-                  whileTap={{ scale: 1.1}}
+
                   onClick={() => handlePlus(index)}  
                 />
-                <motion.div variants={variants} initial="start" animate="end" className="pad1">{id.amount}</motion.div>
+                <motion.div  variants={variants} initial="start" animate="end" className="pad1">{id.amount}</motion.div>
                 <FiMinusSquare
+                  data-html2canvas-ignore
                   className="pad"
                   onClick={() => handleMinus(index)}
                 />
                 <FiTrash2
+                  data-html2canvas-ignore
                   className="pad2"
                   onClick={() => handleDelete(index)}
                 />
-              </div>
+              </motion.div>
             </div>
           </animated.div>
         ))
