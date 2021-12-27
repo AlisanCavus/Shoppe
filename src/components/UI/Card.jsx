@@ -9,7 +9,7 @@ import { motion } from 'framer-motion'
 
 function Card() {
   const [shoplist, setShopList] = useState([]);
-  console.log(shoplist);
+  
 
   useEffect(() => {
     const data = localStorage.getItem('shopping-list-lists')
@@ -57,6 +57,11 @@ function Card() {
     delay: 300,
   });
 
+  const variants = { 
+    start: {y: -20, opacity: 0},
+    end: {y: 0, opacity: 1},
+  }
+
   return (
     <div>
       <AddItem handleAdd={addListItem} />
@@ -70,9 +75,10 @@ function Card() {
               <div className="card2">
                 <FiPlusSquare
                   className="pad"
-                  onClick={() => handlePlus(index)}
+                  whileTap={{ scale: 1.1}}
+                  onClick={() => handlePlus(index)}  
                 />
-                <div className="pad1">{id.amount}</div>
+                <motion.div variants={variants} initial="start" animate="end" className="pad1">{id.amount}</motion.div>
                 <FiMinusSquare
                   className="pad"
                   onClick={() => handleMinus(index)}
