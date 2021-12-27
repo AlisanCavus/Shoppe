@@ -8,7 +8,7 @@ function Screen() {
   const [image, setImage] = useState();
   const openModal = () => {
     const elem = document.getElementById('apx');
-    html2canvas(elem, {backgroundColor: null, scale: '20', scrollY: 1000}).then((canvas) => {
+    html2canvas(elem, {backgroundColor: null, scale: '20', scrollY: 500, width: 500, scrollX: 500, height: 500}).then((canvas) => {
       setImage(canvas.toDataURL())
       
       modalRef.current.style.display = 'grid'
@@ -21,7 +21,9 @@ function Screen() {
 
   return (
     <div>
-      <motion.button className="camera" onClick={openModal}>
+      <motion.button className="camera" onClick={openModal}
+      whileHover={{scale: 1.1}}
+      whileTap={{scale: 0.9}}>
         <AiFillCamera
           style={{ width: '30px', height: '30px', alignItems: 'center' }}
         />
