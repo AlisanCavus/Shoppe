@@ -11,3 +11,9 @@ You can simple add the items on your list.
 Items is stored in your browser's local storage.
 When you need to take the list with you, you can create img version by clicking the little camera button right-bottom side of the screen. You can simply download the picture and send the one that goes shopping or you can use it.
 
+---------
+
+
+##### This project is made with React ver. 17.0.2.
+
+##### Other packages are : uuidv4, html2canvas, react-icons
