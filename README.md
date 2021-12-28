@@ -1,7 +1,7 @@
 # [Shoppe] (https://friendly-visvesvaraya-fd61c5.netlify.app) 
 ## Your daily shopping list.
 
-[![Shoppe App] (/src/assets/sc.png "image")] (https://ibb.co/R3dZV9b)
+![image](https://i.ibb.co/N9bQHsC/Screenshot-2021-12-28-at-14-00-17.png)
 
 ---------
 
