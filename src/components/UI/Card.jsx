@@ -4,11 +4,12 @@ import { FiTrash2 } from 'react-icons/fi';
 import { useState, useEffect } from 'react';
 import AddItem from '../AddItem';
 import { useSpring, animated } from 'react-spring';
-import { motion } from 'framer-motion';
+
+
 
 function Card() {
   const [shoplist, setShopList] = useState([]);
-  const [anim, setAnim] = useState(false);
+  
 
   useEffect(() => {
     const data = localStorage.getItem('shopping-list-lists');
@@ -31,7 +32,12 @@ function Card() {
     const newShopItems = [...shoplist];
     newShopItems[index].amount++;
     setShopList(newShopItems);
+   
+   
   };
+
+  
+
 
   const handleMinus = (index) => {
     const newShopItems = [...shoplist];
@@ -40,7 +46,7 @@ function Card() {
     } else {
       newShopItems[index].amount--;
       setShopList(newShopItems);
-      setAnim(true);
+     
     }
   };
 
@@ -56,10 +62,7 @@ function Card() {
     delay: 300,
   });
 
-  const variants = {
-    start: { y: -20, opacity: 0 },
-    end: { y: 0, opacity: 1 },
-  };
+  
 
   return (
     <div id="apx">
@@ -73,20 +76,17 @@ function Card() {
           <animated.div style={sty} key={id.id}>
             <div className="card">
               <p>{id.item}</p>
-              <motion.div className="card2">
+              <div className="card2">
                 <FiPlusSquare
                   data-html2canvas-ignore
                   className="pad"
                   onClick={() => handlePlus(index)}
                 />
-                <motion.div
-                  variants={variants}
-                  initial="start"
-                  animate="end"
+                <div
                   className="pad1"
                 >
                   {id.amount}
-                </motion.div>
+                </div>
                 <FiMinusSquare
                   data-html2canvas-ignore
                   className="pad"
@@ -97,7 +97,7 @@ function Card() {
                   className="pad2"
                   onClick={() => handleDelete(index)}
                 />
-              </motion.div>
+              </div>
             </div>
           </animated.div>
         ))

@@ -9,12 +9,14 @@ function Screen() {
   const openModal = () => {
     const elem = document.getElementById('apx');
     html2canvas(elem, {backgroundColor: null, scale: '20', scrollY: 500, width: 500, scrollX: 500, height: 500}).then((canvas) => {
-      setImage(canvas.toDataURL())
+      const urldata = canvas.toDataURL()
+      setImage(urldata)
       
       modalRef.current.style.display = 'grid'
     });
   };
 
+  
   const closeModal = () => {
     modalRef.current.style.display = 'none';
   };
@@ -26,6 +28,7 @@ function Screen() {
       whileTap={{scale: 0.9}}>
         <AiFillCamera
           style={{ width: '30px', height: '30px', alignItems: 'center' }}
+          whileTap={{scale: 0.9}}
         />
       </motion.button>
 
@@ -35,6 +38,7 @@ function Screen() {
             <AiFillCloseCircle />
           </span>
           <div className="imageWrapper">
+            <h1 className="pad">Your Shopping list.</h1>
             <img src={image} alt="imaj" />
           </div>
         </div>
